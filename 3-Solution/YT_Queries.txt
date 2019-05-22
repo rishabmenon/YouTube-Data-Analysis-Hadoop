@@ -1,0 +1,61 @@
+1) Create Database
+
+create database youtubeProject;
+
+--------------------------------------------------------------------------------------
+
+2) Create Table with specified fields
+
+
+create table youtubetab
+(videoid varchar(11), name string, interval int, category string,
+ length int, views int, rating float, numrating int, comments int, relatedid varchar(11) )
+row format delimited fields terminated by "\t"
+lines terminated by "\n"
+
+---------------------------------------------------------------------------------------
+
+3) Load data into table
+
+
+load data local inpath "youtubedata.txt" into table youtubetab
+
+-----------------------------------------------------------------------------------------------------------------
+
+Problem Statement A
+
+select category, count(*) A
+from youtubetab
+group by category
+order by A desc limit 5
+
+----------------------------------------------------------------------------------------------------------------
+
+Problem Statement B
+
+select videoid, rating
+from youtubetab
+order by rating desc limit 10
+
+------------------------------------------------------------------------------------------------------------------
+
+Problem Statement C
+
+select videoid, views
+from youtubetab
+order by views desc
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
